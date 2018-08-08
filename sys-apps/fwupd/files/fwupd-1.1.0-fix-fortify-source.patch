@@ -1,0 +1,11 @@
+diff -Naur fwupd-orig/plugins/uefi/efi/meson.build fwupd-fixed/plugins/uefi/efi/meson.build
+--- fwupd-orig/plugins/uefi/efi/meson.build	2018-08-08 22:19:56.928710989 +0800
++++ fwupd-fixed/plugins/uefi/efi/meson.build	2018-08-08 22:22:54.179823966 +0800
+@@ -50,6 +50,7 @@
+ debugdir = join_paths (libdir, 'debug')
+ compile_args = ['-Og',
+                 '-g3',
++                '-U_FORTIFY_SOURCE',
+                 '-Wp,-D_FORTIFY_SOURCE=2',
+                 '--param=ssp-buffer-size=4',
+                 '-fexceptions',
